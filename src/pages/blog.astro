@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MobileMenu from "../components/MobileMenu.astro";
+import ServicesHeader from "../components/ServicesHeader.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+import Cta from "../components/Cta.astro";
+import ContactFooter from "../components/ContactFooter.astro";
+import BlogGrid from "../components/BlogGrid.astro";
+
+// Get all posts
+const posts = await Astro.glob("../posts/*.md");
+
+// Import the categories data from JSON
+import categoriesData from "../categories.json";
+const categories = categoriesData.categories;
+---
+
+<Layout title="FuseCode - Blog">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <MobileMenu />
+
+  <div class="has-smooth" id="has_smooth"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper">
+        <ServicesHeader />
+        <BreadCrumb pageName="Our Blog Post" />
+
+        <!-- Pass all posts and categories to BlogGrid -->
+        <BlogGrid posts={posts} categories={categories} />
+
+        <Cta />
+        <ContactFooter />
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,137 @@
+---
+export const prerender = true;
+
+// Import necessary components and helpers
+import Layout from "../../layouts/Layout.astro";
+import MobileMenu from "../../components/MobileMenu.astro";
+import ServicesHeader from "../../components/ServicesHeader.astro";
+import Cta from "../../components/Cta.astro";
+import ContactFooter from "../../components/ContactFooter.astro";
+
+// Static paths for individual post pages
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../../posts/*.md");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }));
+}
+
+// Extracting frontmatter and content from the current post
+const { Content, frontmatter } = Astro.props.post;
+
+// Fetch all posts for the popular posts section
+const posts = await Astro.glob("../../posts/*.md");
+// Optional: Fetch categories from a JSON file if needed
+import categoriesDate from "../../categories.json";
+const Categories = categoriesDate.categories;
+---
+
+<Layout title="FuseCode - Blog">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <MobileMenu />
+
+  <div class="has-smooth" id="has_smooth"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper">
+        <ServicesHeader />
+
+        <section class="zq_blog_details-area pt-200 pb-60">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <div class="zq_blog_details-left mb-40">
+                  <div class="zq_blog_details-content">
+                    <div class="zq_blog_details-content-img mb-20">
+                      <img src={frontmatter.image} alt={frontmatter.slug} />
+                    </div>
+                    <h3 class="zq_blog_details-content-title mb-20">
+                      {frontmatter.title}
+                    </h3>
+                    <div class="zq_blog_details-content-meta">
+                      <span>
+                        <img
+                          src={frontmatter.thumbnail}
+                          alt={frontmatter.slug}
+                        />
+                        By {frontmatter.author}
+                      </span>
+                      <span>
+                        <i class="fa-sharp fa-light fa-calendar"></i>
+                        {new Date(frontmatter.date).toDateString()}
+                      </span>
+                      <span>
+                        <i class="fa-sharp fa-light fa-message-lines"></i> 02 Comments
+                      </span>
+                    </div>
+                    <p class="zq_blog_details-content-text mb-10">
+                      <Content />
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="zq_blog_widget-wrap mb-40 ml-30">
+                  <div class="zq_blog-widget">
+                    <h4 class="zq_blog-widget-title">Popular Posts</h4>
+                    {
+                      posts.map((post) => (
+                        <div class="zq_blog-widget-post mb-15">
+                          <div class="zq_blog-widget-post-img">
+                            <a href={`/blog/${post.frontmatter.slug}`}>
+                              <img
+                                src={post.frontmatter.image}
+                                alt={post.frontmatter.slug}
+                              />
+                            </a>
+                          </div>
+                          <div class="zq_blog-widget-post-content">
+                            <h4>
+                              <a href={`/blog/${post.frontmatter.slug}`}>
+                                {post.frontmatter.title}
+                              </a>
+                            </h4>
+                            <span>
+                              <i class="fa-sharp fa-light fa-calendar" />
+                              {new Date(post.frontmatter.date).toDateString()}
+                            </span>
+                          </div>
+                        </div>
+                      ))
+                    }
+                  </div>
+                  <div class="zq_blog-widget">
+                    <h4 class="zq_blog-widget-title">Categories</h4>
+                    <ul class="zq_blog-widget-category">
+                      {
+                        Categories.map((category, ind) => (
+                          <li>
+                            <a href={`/blog?category=${category}`}>
+                              {category} <span>{ind + 1}</span>
+                            </a>
+                          </li>
+                        ))
+                      }
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <Cta />
+        <ContactFooter />
+      </div>
+    </div>
+  </div>
+</Layout>

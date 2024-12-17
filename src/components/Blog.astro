@@ -1,0 +1,114 @@
+---
+const posts = await Astro.glob("../posts/*.md");
+---
+
+<!-- blog area start -->
+<section class="zq_h2_blog-area">
+  <div class="zq_common_width-3">
+    <div class="zq_common_width-3_inner pb-100 pt-95">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-7 col-md-8">
+            <div class="zq_h3_section-area text-center">
+              <span class="zq_h3_section-subtitle mb-20">Our Blog</span>
+              <h2 class="zq_h3_section-title mb-10">Tech Insights</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Items Container with CSS Overflow -->
+        <div class="zq_h3_blog-wrap" id="blog-list">
+          {
+            posts.slice(0, 6).map((post) => (
+              <div class="zq_h3_blog-item">
+                <div class="zq_h3_blog-item-img">
+                  <a href={`/blog/${post.frontmatter.slug}`}>
+                    <img
+                      src={post.frontmatter.image}
+                      alt={post.frontmatter.slug}
+                    />
+                  </a>
+                </div>
+                <div class="zq_h3_blog-item-content">
+                  <span class="zq_h3_blog-item-content-tag">
+                    {post.frontmatter.tag}
+                  </span>
+                  <h3 class="zq_h3_blog-item-content-title">
+                    <a href={`/blog/${post.frontmatter.slug}`}>
+                      {post.frontmatter.title}
+                    </a>
+                  </h3>
+                  <div class="zq_h3_blog-item-content-admin">
+                    <img
+                      src={post.frontmatter.thumbnail}
+                      alt={post.frontmatter.slug}
+                    />
+                    <span>
+                      By{" "}
+                      <a href={`/blog/${post.frontmatter.slug}`}>
+                        {post.frontmatter.author}
+                      </a>
+                    </span>
+                  </div>
+                  <div class="zq_h3_blog-item-content-btn">
+                    <a href={`/blog/${post.frontmatter.slug}`}>
+                      <svg
+                        width="41"
+                        height="40"
+                        viewBox="0 0 41 40"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g>
+                          <path
+                            d="M11.7343 30.0177C11.2462 30.5059 10.4548 30.5059 9.96666 30.0177C9.47849 29.5296 9.47849 28.7382 9.96666 28.25L11.7343 30.0177ZM9.96666 28.25L27.9666 10.25L29.7344 12.0178L11.7343 30.0177L9.96666 28.25Z"
+                            fill="currentColor"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M30.9844 10.25C30.9844 9.55964 30.4247 9 29.7344 9H14.7344C14.044 9 13.4844 9.55964 13.4844 10.25C13.4844 10.9404 14.044 11.5 14.7344 11.5H28.4844V25.25C28.4844 25.9404 29.044 26.5 29.7344 26.5C30.4247 26.5 30.9844 25.9404 30.9844 25.25V10.25Z"
+                            fill="currentColor"
+                          />
+                        </g>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Optional: Footer and other sections -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- blog area end -->
+
+<style>
+  /* Limit the blog section to 3 posts at first */
+  .zq_h3_blog-wrap {
+    max-height: 900px; /* Adjust this value depending on the height of a blog item */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+  .zq_h3_blog-item {
+    margin-bottom: 20px; /* Space between blog items */
+  }
+
+  /* Optional: Styling for scrollbars */
+  .zq_h3_blog-wrap::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  .zq_h3_blog-wrap::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+  }
+
+  .zq_h3_blog-wrap::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+</style>

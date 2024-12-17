@@ -1,0 +1,101 @@
+---
+const api_key = import.meta.env.WEB3FORM_EMAIL_API_KEY;
+---
+
+<!-- contact area start -->
+<section class="zq_contact-area pb-100 pt-100">
+  <div class="container">
+    <div class="zq_contact-wrap">
+      <div class="zq_contact-content">
+        <div class="zq_h3_section-area">
+          <h2 class="zq_h3_section-title mb-30">
+            Get Started with Us.
+            <br />
+            Get in Touch Now!
+          </h2>
+          <p class="zq_h3_section-text mb-40">
+            The fastest way to get started is to contact us today, drop us an
+            email or fill out the form and one of our experts will be in touch.
+          </p>
+        </div>
+        <div class="zq_contact-call">
+          <div class="zq_contact-call-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="currentColor"
+              class="bi bi-envelope"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+              ></path>
+            </svg>
+          </div>
+          <div class="zq_contact-call-info">
+            <span>Email us at</span>
+            <a href="mailto:start@fusecode.pk">start@fusecode.pk</a>
+          </div>
+        </div>
+      </div>
+      <div class="zq_contact-form">
+        <form id="success">
+          <input type="hidden" name="access_key" value={api_key} />
+          <div class="row g-20">
+            <div class="col-sm-6">
+              <input type="text" name="name" placeholder="Name*" required />
+            </div>
+            <div class="col-sm-6">
+              <input
+                type="email"
+                id="contactEmail"
+                name="email"
+                placeholder="Email*"
+                required
+              />
+            </div>
+            <div class="col-sm-6">
+              <input type="text" name="phone" placeholder="Phone" required />
+            </div>
+            <div class="col-sm-6">
+              <select name="service" class="has-nice-select" required>
+                <option value="" disabled selected>Select Service</option>
+                <option value="Backend Development">Backend Development</option>
+                <option value="Frontend Development"
+                  >Frontend Development</option
+                >
+                <option value="Data Engineering">Data Engineering</option>
+                <option value="Mobile Development">Mobile Development</option>
+                <option value="Graphics Design">Graphics Design</option>
+                <option value="UX/UI Design">UX/UI Design</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <textarea name="message" placeholder="Write a Message*" required
+              ></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="zq_contact-form-btn">Send Now</button
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact area end -->
+
+<script is:inline>
+  window.onload = function () {
+    // Get the query string from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const email = urlParams.get("email"); // Get the 'email' parameter from the URL
+
+    if (email) {
+      // If there's an 'email' in the query string, pre-fill the contact form email field
+      document.getElementById("contactEmail").value = decodeURIComponent(email);
+    }
+  };
+</script>

@@ -1,0 +1,56 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="FuseCode specializes in creating innovative websites, web 
+        applications, SaaS solutions, multi-tenancy applications, and mobile development. Discover our expertise."
+    />
+    <meta name="keywords" content="digital Services, IT Consultant" />
+    <meta name="author" content="FuseCode" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{title}</title>
+
+    <link rel="icon" href="/assets/img/bk-favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/img/bk-favicon.png" />
+    <link rel="stylesheet" href="/assets/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/css/nice-select.css" />
+    <link rel="stylesheet" href="/assets/css/meanmenu.css" />
+    <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/css/animate.min.css" />
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <slot />
+
+    <!-- jQuery Js -->
+
+    <script src="/assets/js/jquery-3.6.0.min.js" is:inline></script>
+    <script src="/assets/js/bootstrap.bundle.min.js" is:inline></script>
+    <script src="/assets/js/gsap.min.js" is:inline></script>
+    <script src="/assets/js/ScrollSmoother.min.js" is:inline></script>
+    <script src="/assets/js/ScrollTrigger.min.js" is:inline></script>
+    <script src="/assets/js/TweenMax.min.js" is:inline></script>
+    <script src="/assets/js/SplitText.min.js" is:inline></script>
+    <script src="/assets/js/chroma.min.js" is:inline></script>
+    <script src="/assets/js/jquery.nice-select.min.js" is:inline></script>
+    <script src="/assets/js/jquery.meanmenu.min.js" is:inline></script>
+    <script src="/assets/js/swiper-bundle.min.js" is:inline></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js" is:inline></script>
+    <script src="/assets/js/main.js" is:inline></script>
+    <script src="/assets/js/success.js" is:inline></script>
+    <script src="/assets/js/wow.min.js" is:inline></script>
+  </body>
+</html>

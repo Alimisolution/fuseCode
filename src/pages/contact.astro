@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+import ContactHeader from "../components/ContactHeader.astro";
+import MobileMenu from "../components/MobileMenu.astro";
+import ReachUs from "../components/ReachUs.astro";
+import MessageUs from "../components/MessageUs.astro";
+import Map from "../components/Map.astro";
+import Cta from "../components/Cta.astro";
+import ContactFooter from "../components/ContactFooter.astro";
+---
+
+<Layout title="FuseCode - Contact">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <MobileMenu />
+
+  <div class="has-smooth" id="has_smooth"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper">
+        <ContactHeader />
+        <main>
+          <BreadCrumb pageName="Contact" darkMode="dark mode" />
+          <ReachUs />
+
+          <div class="zq_border-top"></div>
+
+          <MessageUs />
+          <Map />
+          <Cta CtaBg="zq_cta_bg" />
+          <ContactFooter />
+        </main>
+      </div>
+    </div>
+  </div>
+</Layout>

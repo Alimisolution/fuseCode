@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MobileMenu from "../components/MobileMenu.astro";
+import ServicesHeader from "../components/ServicesHeader.astro";
+import BreadCrumb from "../components/BreadCrumb.astro";
+import OurStory from "../components/OurStory.astro";
+import OurValue from "../components/OurValue.astro";
+import OurTools from "../components/OurTools.astro";
+import Cta from "../components/Cta.astro";
+import ContactFooter from "../components/ContactFooter.astro";
+---
+
+<Layout title="FuseCode - About">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <MobileMenu />
+
+  <div class="has-smooth" id="has_smooth"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper">
+        <ServicesHeader />
+        <BreadCrumb pageName="About Us" />
+        <OurStory />
+        <OurValue />
+        <OurTools />
+        <Cta />
+        <ContactFooter />
+      </div>
+    </div>
+  </div>
+</Layout>

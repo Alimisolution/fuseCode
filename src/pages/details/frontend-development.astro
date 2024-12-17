@@ -1,0 +1,42 @@
+---
+import ServicesLayout from "../../layouts/ServicesLayout.astro";
+import MobileMenu from "../../components/MobileMenu.astro";
+import ServicesHeader from "../../components/ServicesHeader.astro";
+import BreadCrumb from "../../components/BreadCrumb.astro";
+import ContentMarketing from "../../components/ContentMarketing.astro";
+import FrontendDetails from "../../components/FrontendDetails.astro";
+import Cta from "../../components/Cta.astro";
+import ContactFooter from "../../components/ContactFooter.astro";
+import services from "../../services.json";
+
+const serviceDeatils = services.find(
+  (service) => service.title === "Frontend Development",
+);
+---
+
+<ServicesLayout title="FuseCode - Frontend Development">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <MobileMenu />
+
+  <div class="has-smooth" id="has_smooth"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper">
+        <ServicesHeader />
+        <BreadCrumb pageName="Frontend Development" />
+        <ContentMarketing
+          content={serviceDeatils?.content}
+          title={serviceDeatils?.title}
+          subTitle={serviceDeatils?.subTitle}
+        />
+        <FrontendDetails />
+        <Cta />
+        <ContactFooter />
+      </div>
+    </div>
+  </div>
+</ServicesLayout>

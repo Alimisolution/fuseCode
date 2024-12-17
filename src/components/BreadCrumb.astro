@@ -1,0 +1,33 @@
+---
+export interface Props {
+  pageName: string;
+  darkMode?: string;
+}
+
+const { pageName, darkMode } = Astro.props as Props;
+---
+
+<!-- breadcrumb area start -->
+<div class={`zq_breadcrumb-area zq_${darkMode ? "dark_bg" : ""}`}>
+  <div class="zq_breadcrumb-wrap">
+    <img
+      src="/assets/images/bg/breadcrumb.png"
+      alt=""
+      class="zq_breadcrumb-img"
+    />
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="zq_breadcrumb-content text-center">
+            <h2 class="zq_breadcrumb-content-title">{pageName}</h2>
+            <div class="zq_breadcrumb-content-list">
+              <a href="/">Home</a>
+              <span>{pageName}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- breadcrumb area start -->

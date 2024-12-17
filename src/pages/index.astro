@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Choose from "../components/ChooseUs.astro";
+import Partners from "../components/Partners.astro";
+import Blog from "../components/Blog.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import MobileMenu from "../components/MobileMenu.astro";
+---
+
+<Layout title="FuseCode - Comprehensive Digital Solutions for Your Business">
+  <!-- Cursor Animation -->
+  <div class="cursor1"></div>
+  <div class="cursor2"></div>
+
+  <MobileMenu />
+
+  <div class="has-smooth" id="has_smooth"></div>
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="body-wrapper">
+        <Header />
+
+        <main>
+          <Hero />
+          <Services />
+          <Choose />
+          <Partners />
+
+          <div class="has-smooth" id="has_smooth"></div>
+          <div id="smooth-wrapper">
+            <div id="smooth-content">
+              <div class="body-wrapper">
+                <Blog />
+                <Contact />
+                <main>
+                  <Footer />
+                </main>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+</Layout>

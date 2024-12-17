@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="FuseCode - Success ">
+  <div class="success-message">
+    <h1>Thank You!</h1>
+    <p>
+      Your message has been sent successfully. We will get back to you shortly.
+    </p>
+    <a href="/">Go to Home</a>
+  </div>
+</Layout>
+
+<style>
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .success-message p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .success-message a {
+    padding: 0.7rem 1.2rem;
+    background-color: #8af135;
+    color: #000;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 500px) {
+    .success-message {
+      padding: 20px;
+    }
+    .success-message h1 {
+      font-size: 3rem;
+    }
+    .success-message p {
+      font-size: 1rem;
+    }
+  }
+</style>

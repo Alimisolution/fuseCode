@@ -1,0 +1,69 @@
+---
+import categoriesData from "../categories.json";
+const Categories = categoriesData.categories;
+
+// Fetch all the posts from your markdown files
+const posts = await Astro.glob("../posts/*.md");
+
+const fullUrl = new URL(Astro.request.url);
+
+// Extract the category query parameter from the URL
+const categoryParam = fullUrl.searchParams.get("category");
+
+// Filter posts based on the category query parameter (if it exists)
+let filteredPosts = posts;
+if (categoryParam) {
+  filteredPosts = posts.filter((post) => {
+    return post.frontmatter.category?.some(
+      (category) => category.toLowerCase() === categoryParam.toLowerCase(),
+    );
+  });
+}
+---
+
+<!-- Blog Section -->
+<section class="zq_inner_blog-area pt-100 pb-70">
+  <div class="container">
+    <div class="row">
+      {
+        filteredPosts.length === 0 ? (
+          <div class="col-12 text-center">
+            <h3>Sorry, No matching category found.</h3>
+          </div>
+        ) : (
+          filteredPosts.map((post) => (
+            <div class="col-xl-4 col-md-6">
+              <div class="zq_inner_blog-item mb-30">
+                <div class="zq_inner_blog-img">
+                  <a href={`/blog/${post.frontmatter.slug}`}>
+                    <img
+                      src={post.frontmatter.image}
+                      alt={post.frontmatter.slug}
+                    />
+                  </a>
+                </div>
+                <div class="zq_inner_blog-content">
+                  <div class="zq_inner_blog-content-meta">
+                    <span>By {post.frontmatter.author}</span>
+                    <span>6 min read</span>
+                  </div>
+                  <h3 class="zq_inner_blog-content-title">
+                    <a href={`/blog/${post.frontmatter.slug}`}>
+                      {post.frontmatter.title}
+                    </a>
+                  </h3>
+                  <a
+                    href={`/blog/${post.frontmatter.slug}`}
+                    class="zq_inner_blog-content-btn"
+                  >
+                    Look More <i class="fa-light fa-arrow-up-right" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))
+        )
+      }
+    </div>
+  </div>
+</section>

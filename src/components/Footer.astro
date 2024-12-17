@@ -1,0 +1,92 @@
+---
+const news_api = import.meta.env.NEWSLETTER_API;
+---
+
+<!-- footer area start -->
+<footer class="zq_footer-area">
+  <div class="zq_footer-top pt-95">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-xl-4 col-lg-4 col-md-6">
+          <div class="zq_footer-widget mr-85 mb-40">
+            <div class="zq_footer-widget-logo mb-20">
+              <a href="/"
+                ><img
+                  style="width:100px"
+                  src="/assets/img/logo/wh-logo.svg"
+                  alt="fusecode-logo"
+                /></a
+              >
+            </div>
+            <p class="zq_footer-widget-text">
+              At FuseCode, we're dedicated to delivering the best software
+              solutions,tailored to meet the unique needs of businesses like
+              yours.
+            </p>
+          </div>
+        </div>
+        <div
+          class="col-xl-2 col-lg-3 col-md-4 d-flex justify-content-lg-center justify-content-xl-start"
+        >
+          <div class="zq_footer-widget mb-35">
+            <h4 class="zq_footer-widget-title">Services</h4>
+            <ul>
+              <li>
+                <a href="/details/backend-development"> Backend Development</a>
+              </li>
+              <li>
+                <a href="/details/frontend-development">
+                  Frontend Development</a>
+              </li>
+              <li><a href="/details/data-engineering"> Data Engineering</a></li>
+              <li>
+                <a href="/details/mobile-development"> Mobile Development</a>
+              </li>
+              <li><a href="/details/graphics-design"> Graphics Design</a></li>
+              <li><a href="/details/ui-ux"> UI/UX Design</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="col-xl-2 col-lg-2 col-md-4 d-flex justify-content-xl-end order-lg-3 order-md-4 order-3"
+        >
+          <div class="zq_footer-widget mb-35">
+            <h4 class="zq_footer-widget-title">Quick Links</h4>
+            <ul>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="/termsconditions">Terms & Conditions</a></li>
+              <li><a href="/privacypolicy">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-3 col-md-6 order-lg-4 order-md-3 order-4">
+          <div class="zq_footer-widget ml-85 mb-5">
+            <h4 class="zq_footer-widget-title">Newsletter</h4>
+            <p class="zq_footer-widget-text">
+              Get the latest news from our team of experts.
+            </p>
+            <form method="POST" action={news_api}>
+              <input type="email" placeholder="Email Address" required />
+              <button type="submit"
+                ><i class="fa-sharp fa-solid fa-paper-plane"></i></button
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="zq_footer-bottom">
+    <div class="container">
+      <div class="zq_footer-bottom-wrap justify-content-center">
+        <div class="zq_footer-copyright">
+          <b>Copyright © 2024 FuseCode. All Rights Reserved</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- footer area end -->

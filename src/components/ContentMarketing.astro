@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title?: string;
+  content?: string;
+  subTitle?: string;
+}
+
+const { title, content, subTitle } = Astro.props;
+---
+
+<!-- service details area start -->
+<section class="zq_service_details-area pt-95 pb-100">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-xxl-5 col-lg-6">
+        <div class="zq_section-area mb-50">
+          <span class="zq_section-subtitle mb-20">{title}</span>
+          <h2 class="zq_section-title mb-0">
+            {subTitle}
+          </h2>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="zq_section-area mb-50">
+          <p class="zq_section-text mb-20">
+            {content}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="zq_service_details-img">
+          <img src="/assets/images/service/s_details-1.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- service details area end -->

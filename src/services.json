@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "subTitle": "Building Robust and Scalable Architectures to Power Your Digital Experience",
+    "title": "Backend Development",
+    "content": "Our backend development service powers the core functionality of your applications, ensuring seamless data processing, security, and performance. We create robust, scalable backend solutions that lay the foundation for reliable and responsive digital experiences."
+  },
+  {
+    "id": 2,
+    "subTitle": "Crafting Engaging Interfaces with a Focus on Performance and Usability",
+    "title": "Frontend Development",
+    "content": "We bring user interfaces to life through intuitive and visually engaging frontend development. By focusing on interactivity and usability, we create applications that captivate users and provide a seamless experience across all devices."
+  },
+  {
+    "id": 3,
+    "subTitle": "Transforming Raw Data into Actionable Insights for Smarter Business Decisions",
+    "title": "Data Engineering",
+    "content": "Our data engineering service enables businesses to unlock insights and drive decisions through efficient data management and analysis. We build and maintain pipelines that transform raw data into actionable intelligence, supporting strategic growth."
+  },
+  {
+    "id": 4,
+    "subTitle": "Creating Intuitive and Responsive Mobile Solutions for Every Platform",
+    "title": "Mobile Development",
+    "content": "With our mobile development expertise, we create high-performance apps for iOS and Android that connect with users wherever they are. We focus on usability, speed, and functionality, crafting mobile experiences that are both engaging and effective."
+  },
+  {
+    "id": 5,
+    "subTitle": "Seamless Integration Across Varied Platforms for Enhanced Collaboration",
+    "title": "Graphics Design",
+    "content": "Our graphics design service combines creativity with precision to produce visuals that resonate with audiences. From brand identity to digital assets, we craft designs that enhance brand presence and communicate your message with impact."
+  },
+  {
+    "id": 6,
+    "subTitle": "Designing User-Centered Interfaces for a Smooth and Engaging Digital Journey",
+    "title": "UI-UX Design",
+    "content": "In UI/UX design, we prioritize user satisfaction by designing interfaces that are both beautiful and easy to navigate. We create user-centered designs that elevate the overall experience, ensuring each interaction feels smooth, intuitive, and engaging."
+  }
+]
